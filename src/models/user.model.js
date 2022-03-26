@@ -11,6 +11,7 @@ const UserSchema = mongoose.Schema({
   password: {
     type: String,
     required: true,
+    hidden: true,
   },
 });
 
@@ -41,4 +42,4 @@ UserSchema.methods.comparePassword = function (candidatePassword, cb) {
   });
 };
 
-module.exports = mongoose.Model("User", UserSchema);
+module.exports = mongoose.model("User", UserSchema);
